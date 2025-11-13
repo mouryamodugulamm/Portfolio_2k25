@@ -1,13 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
 import './App.css'
-import {
-  achievements,
-  contactLinks,
-  education,
-  experiences,
-  profile,
-  skills,
-} from './data/portfolio'
+import { achievements, contactLinks, education, experiences, profile, projects, skills } from './data/portfolio'
 
 type Theme = 'light' | 'dark'
 
@@ -37,21 +31,11 @@ const ThemeToggle = ({ theme, onToggle }: { theme: Theme; onToggle: () => void }
     aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
   >
     <span className="theme-toggle__option" data-mode="light">
-      <svg viewBox="0 0 24 24" width="18" height="18" role="presentation" aria-hidden="true">
-        <path
-          d="M12 5.25a.75.75 0 0 1 .75.75V7a.75.75 0 0 1-1.5 0V6a.75.75 0 0 1 .75-.75Zm5.303 1.197a.75.75 0 0 1 1.06 1.06l-.53.53a.75.75 0 0 1-1.06-1.06l.53-.53ZM12 9a3 3 0 1 1-3 3 3 3 0 0 1 3-3Zm9 .75a.75.75 0 0 1-.75.75H19a.75.75 0 0 1 0-1.5h1.25a.75.75 0 0 1 .75.75Zm-3.447 6.303a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 1.06-1.06l.53.53a.75.75 0 0 1 0 1.06ZM12 17a.75.75 0 0 1 .75.75V19a.75.75 0 0 1-1.5 0v-1.25A.75.75 0 0 1 12 17Zm-6.303-.75a.75.75 0 0 1 1.06 0l.53.53a.75.75 0 0 1-1.06 1.06l-.53-.53a.75.75 0 0 1 0-1.06ZM7 12a.75.75 0 0 1-.75.75H5a.75.75 0 0 1 0-1.5h1.25A.75.75 0 0 1 7 12Zm-1.697-5.553a.75.75 0 1 1 1.06-1.06l.53.53a.75.75 0 1 1-1.06 1.06l-.53-.53Z"
-          fill="currentColor"
-        />
-      </svg>
+      <Sun size={18} strokeWidth={1.6} aria-hidden="true" />
       <span>Light</span>
     </span>
     <span className="theme-toggle__option" data-mode="dark">
-      <svg viewBox="0 0 24 24" width="18" height="18" role="presentation" aria-hidden="true">
-        <path
-          d="M12.248 4.006a1 1 0 0 1 .936.311 6 6 0 0 0 6.498 1.807 1 1 0 0 1 1.18 1.326 8 8 0 1 1-8.74-4.335 1 1 0 0 1 .126-.109Z"
-          fill="currentColor"
-        />
-      </svg>
+      <Moon size={18} strokeWidth={1.6} aria-hidden="true" />
       <span>Dark</span>
     </span>
     <span className="theme-toggle__thumb" aria-hidden="true" />
@@ -98,6 +82,9 @@ function App() {
             </a>
             <a className="button button--ghost" href={`mailto:${profile.email}`}>
               Let&apos;s collaborate
+            </a>
+            <a className="button button--accent" href="https://wa.me/917337048355?text=Hi%20Mourya%2C%20let%27s%20connect!" target="_blank" rel="noreferrer">
+              Chat on WhatsApp
             </a>
           </div>
           <div className="hero__meta">
@@ -192,6 +179,41 @@ function App() {
           </div>
         </section>
 
+        <section className="section section--projects">
+          <div className="section__heading">
+            <h2>Personal Build Lab</h2>
+            <p>Selected side projects where I explore product ideas, refine design systems, and experiment with tooling.</p>
+          </div>
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <a key={project.title} className="project-card" href={project.url} target="_blank" rel="noreferrer">
+                <div className="project-card__media" style={{ backgroundImage: project.accent }}>
+                  <span className="project-card__badge">{project.badge}</span>
+                  <div className="project-card__texture" aria-hidden="true" />
+                </div>
+                <div className="project-card__content">
+                  <div className="project-card__header">
+                    <h3>{project.title}</h3>
+                    <span aria-hidden="true">↗</span>
+                  </div>
+                  <p className="project-card__headline">{project.headline}</p>
+                  <p>{project.description}</p>
+                  <ul className="project-card__highlights">
+                    {project.highlights.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <div className="project-card__tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <section className="section">
           <div className="section__heading">
             <h2>Education</h2>
@@ -225,10 +247,31 @@ function App() {
 
         <footer className="footer">
           <p>Let&apos;s build something remarkable.</p>
-          <a className="button button--primary" href={`mailto:${profile.email}`}>
-            Schedule a conversation
+          <a className="button button--accent" href="https://wa.me/917337048355?text=Hi%20Mourya%2C%20let%27s%20connect!" target="_blank" rel="noreferrer">
+            Message on WhatsApp
           </a>
         </footer>
+        <div className="footer-meta">
+          <div className="footer-meta__brand">
+            <span className="footer-meta__dot" aria-hidden="true" />
+            <span>{profile.name}</span>
+          </div>
+          <div className="footer-meta__links">
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <span className="footer-meta__copyright">
+            © {new Date().getFullYear()} Mourya Modugula. Crafted with React + Vite.
+          </span>
+        </div>
       </main>
     </div>
   )

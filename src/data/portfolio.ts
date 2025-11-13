@@ -31,11 +31,22 @@ export type Education = {
   details?: string
 }
 
+export type Project = {
+  title: string
+  url: string
+  headline: string
+  description: string
+  highlights: string[]
+  tags: string[]
+  accent: string
+  badge: string
+}
+
 export const profile = {
   name: 'Mourya Vamsi Modugula',
   title: 'Full Stack Developer',
   location: 'Hyderabad, India',
-  phone: '+91 73370 48355',
+  phone: '+91 7337048355',
   email: 'mouryamodugulamm@gmail.com',
   summary:
     'Experienced full-stack engineer with 4+ years delivering enterprise-ready web platforms using React, Next.js, Node.js, GraphQL, and TypeScript. Skilled at building resilient, data-rich interfaces, optimizing performance, and partnering with cross-functional teams to ship secure, scalable solutions.',
@@ -49,6 +60,10 @@ export const contactLinks: ContactLink[] = [
   {
     label: 'Phone',
     href: 'tel:+917337048355',
+  },
+  {
+    label: 'WhatsApp',
+    href: 'https://wa.me/917337048355',
   },
   {
     label: 'LinkedIn',
@@ -217,6 +232,93 @@ export const achievements: string[] = [
   'Enhanced page performance by cutting load time through code splitting, lazy loading, and caching strategies.',
   'Streamlined release testing, reducing regression bugs and enabling faster deployment cycles.',
   'Improved customer satisfaction by ensuring error-free UI performance in production environments.',
+]
+
+export const projects: Project[] = [
+  {
+    title: 'Indify Startup Compass',
+    url: 'https://indify-startup-compass.vercel.app',
+    headline: 'Startup telemetry for investor updates',
+    description: 'Investor-grade KPI dashboard that helps founders track momentum, retention, and growth levers in real time.',
+    highlights: [
+      'Unified retention, activation, and growth analytics into one live workspace.',
+      'Scenario modelling cards that forecast ARR and user cohorts on the fly.',
+      'Automated update exports for stakeholders and monthly board decks.',
+    ],
+    accent: 'linear-gradient(135deg, #6d7cff, #a97bff)',
+    badge: 'Indify',
+    tags: ['Product Analytics', 'Next.js', 'TypeScript'],
+  },
+  {
+    title: 'Plus Cabs Fleet Command',
+    url: 'https://plus-cabs-web-g4qq.vercel.app',
+    headline: 'Command center for ride-hailing partners',
+    description: 'Dispatch cockpit for ride-hailing partners with live driver telemetry, SLA alerts, and custom pricing workflows.',
+    highlights: [
+      'Live fleet heatmaps and driver scorecards to prioritise dispatch decisions.',
+      'Smart escalation queues surfacing SLA breaches across service zones.',
+      'Dynamic pricing editor integrated with demand intelligence signals.',
+    ],
+    accent: 'linear-gradient(135deg, #ff5f6d, #ffc371)',
+    badge: 'Plus Cabs',
+    tags: ['Mobility', 'React', 'Elastic UI'],
+  },
+  {
+    title: 'Infi Studio Portfolio',
+    url: 'https://www.infi-studio.website',
+    headline: 'Storytelling-first creative showcase',
+    description: 'Immersive showcase for a creative studio combining motion-rich storytelling with conversion-led CTAs.',
+    highlights: [
+      'Cinematic scroll choreography pairing visuals with brand narratives.',
+      'Adaptive art direction delivering bespoke layouts for every breakpoint.',
+      'Inline lead capture funnels connected to marketing automation.',
+    ],
+    accent: 'linear-gradient(135deg, #2b5876, #4e4376)',
+    badge: 'Infi Studio',
+    tags: ['Storytelling', 'Performance', 'Design Systems'],
+  },
+  {
+    title: 'Mourya 2024 Portfolio',
+    url: 'https://portfolio-website-dun-zeta.vercel.app',
+    headline: 'Personal brand & case study hub',
+    description: 'Earlier personal site iteration focused on case studies, engineering philosophy, and contact automation.',
+    highlights: [
+      'Narrative-driven project breakdowns emphasising measurable outcomes.',
+      'Notion-backed CMS enabling quick edits without redeploying the site.',
+      'Automated calendaring hooks that streamline intro and pairing calls.',
+    ],
+    accent: 'linear-gradient(135deg, #00c6ff, #0072ff)',
+    badge: 'Portfolio',
+    tags: ['Personal Brand', 'Jamstack'],
+  },
+  {
+    title: 'Predifast Platform',
+    url: 'https://www.predifast.com',
+    headline: 'Vehicle lifecycle operations suite',
+    description: 'Vehicle lifecycle management experience helping dealerships orchestrate logistics, compliance, and analytics.',
+    highlights: [
+      'Slot optimisation for inspections, detailing, and transport flows.',
+      'VIN intelligence cards tracking compliance across state requirements.',
+      'Dealership dashboards delivering turn-time and revenue insights.',
+    ],
+    accent: 'linear-gradient(135deg, #ff758c, #ff7eb3)',
+    badge: 'Predifast',
+    tags: ['Logistics', 'GraphQL', 'UI Engineering'],
+  },
+  {
+    title: 'JC Mount Outdoor Living',
+    url: 'https://jc-mount.vercel.app',
+    headline: 'Destination microsite for outdoor retreats',
+    description: 'Destination microsite inspiring adventure seekers with vivid itineraries, seasonal highlights, and responsive booking flows.',
+    highlights: [
+      'Story-driven itinerary builder mapping multi-day experiences.',
+      'Seasonal theme engine that updates photography and offers automatically.',
+      'Optimised CTAs linking directly to WhatsApp and phone booking flows.',
+    ],
+    accent: 'linear-gradient(135deg, #11998e, #38ef7d)',
+    badge: 'JC Mount',
+    tags: ['Marketing', 'Responsive', 'SEO'],
+  },
 ]
 
 
