@@ -83,9 +83,6 @@ function App() {
             <a className="button button--ghost" href={`mailto:${profile.email}`}>
               Let&apos;s collaborate
             </a>
-            <a className="button button--accent" href="https://wa.me/917337048355?text=Hi%20Mourya%2C%20let%27s%20connect!" target="_blank" rel="noreferrer">
-              Chat on WhatsApp
-            </a>
           </div>
           <div className="hero__meta">
             <div className="hero__meta-item">
