@@ -1,6 +1,7 @@
 export type ContactLink = {
   label: string
   href: string
+  icon: 'mail' | 'phone' | 'whatsapp' | 'linkedin' | 'github' | 'dev'
 }
 
 export type SkillGroup = {
@@ -56,22 +57,32 @@ export const contactLinks: ContactLink[] = [
   {
     label: 'Email',
     href: 'mailto:mouryamodugulamm@gmail.com',
+    icon: 'mail',
   },
   {
     label: 'Phone',
     href: 'tel:+917337048355',
+    icon: 'phone',
   },
   {
     label: 'WhatsApp',
     href: 'https://wa.me/917337048355',
+    icon: 'whatsapp',
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/mouryamodugulamm/',
+    icon: 'linkedin',
   },
   {
     label: 'GitHub',
     href: 'https://github.com/mouryamodugulamm',
+    icon: 'github',
+  },
+  {
+    label: 'DEV',
+    href: 'https://dev.to/mourya_modugula',
+    icon: 'dev',
   },
 ]
 
@@ -228,10 +239,10 @@ export const education: Education[] = [
 ]
 
 export const achievements: string[] = [
-  'Reduced front-end incident resolution time by 30% via faster debugging, RCA documentation, and better tooling.',
-  'Enhanced page performance by cutting load time through code splitting, lazy loading, and caching strategies.',
-  'Streamlined release testing, reducing regression bugs and enabling faster deployment cycles.',
-  'Improved customer satisfaction by ensuring error-free UI performance in production environments.',
+  '✔️ 30% reduction in front-end incident resolution time through RCA playbooks and tooling improvements.',
+  '⚡ 40% faster release validation by streamlining testing pipelines and automated regressions.',
+  '📊 Enhanced page performance by cutting load times via code splitting, lazy loading, and smart caching.',
+  '🔒 Improved security posture by hardening RBAC flows and proactive monitoring across services.',
 ]
 
 export const projects: Project[] = [

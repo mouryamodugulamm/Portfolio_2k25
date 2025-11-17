@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { Github, Linkedin, Mail, MessageCircle, Moon, PenLine, Phone, Sun } from 'lucide-react'
 import './App.css'
 import { achievements, contactLinks, education, experiences, profile, projects, skills } from './data/portfolio'
 
@@ -55,6 +55,15 @@ function App() {
 
   const experienceYears = useMemo(() => '5', [])
 
+  const contactIconMap = {
+    mail: Mail,
+    phone: Phone,
+    whatsapp: MessageCircle,
+    linkedin: Linkedin,
+    github: Github,
+    dev: PenLine,
+  }
+
   return (
     <div className="app">
       <div className="app__background app__background--one" />
@@ -77,7 +86,7 @@ function App() {
           </h1>
           <p className="hero__summary">{profile.summary}</p>
           <div className="hero__cta">
-            <a className="button button--primary" href="/mourya_vamsi_modugula_resume.pdf" target="_blank" rel="noreferrer">
+            <a className="button button--primary" href="/MouryaVamsiModugulaResume.pdf" target="_blank" rel="noreferrer">
               Download resume
             </a>
             <a className="button button--ghost" href={`mailto:${profile.email}`}>
@@ -109,6 +118,10 @@ function App() {
                   target={link.href.startsWith('http') ? '_blank' : undefined}
                   rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
                 >
+                  {(() => {
+                    const Icon = contactIconMap[link.icon]
+                    return Icon ? <Icon size={16} strokeWidth={1.8} aria-hidden="true" /> : null
+                  })()}
                   {link.label}
                 </a>
               ))}
@@ -226,6 +239,13 @@ function App() {
               </article>
             ))}
           </div>
+          <p className="education__resume">
+            View full academic details inside{' '}
+            <a href="/MouryaVamsiModugulaResume.pdf" target="_blank" rel="noreferrer">
+              my CV
+            </a>
+            .
+          </p>
         </section>
 
         <section className="section section--accent">
@@ -261,6 +281,10 @@ function App() {
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
               >
+                {(() => {
+                  const Icon = contactIconMap[link.icon]
+                  return Icon ? <Icon size={15} strokeWidth={1.8} aria-hidden="true" /> : null
+                })()}
                 {link.label}
               </a>
             ))}
