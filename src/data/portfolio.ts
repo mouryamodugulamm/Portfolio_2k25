@@ -107,9 +107,29 @@ export const skills: SkillGroup[] = [
 
 export const experiences: Experience[] = [
   {
+    company: 'UBER',
+    role: 'Senior Software Engineer',
+    period: 'Dec 2025 – Present',
+    project: 'Uber Platform Engineering',
+    roleFocus: 'Senior engineer building scalable, high-performance systems for Uber\'s global platform.',
+    techStack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'GraphQL', 'Microservices', 'AWS'],
+    description:
+      'Leading development of critical platform features and infrastructure for Uber\'s global operations.',
+    highlights: [
+      {
+        title: 'Platform Engineering',
+        points: [
+          'Building scalable microservices and APIs to support Uber\'s global operations.',
+          'Designing and implementing high-performance systems with focus on reliability and scalability.',
+          'Collaborating with cross-functional teams to deliver platform features.',
+        ],
+      },
+    ],
+  },
+  {
     company: 'Eficens Systems',
     role: 'Full Stack Developer',
-    period: 'Dec 2022 – Present',
+    period: 'Dec 2022 – Oct 2025',
     project: 'Snoops Security Intelligence Platform',
     roleFocus: 'Lead full-stack engineer driving secure, real-time monitoring experiences for enterprise SOC teams.',
     techStack: ['React', 'Next.js', 'TypeScript', 'Elastic UI', 'Apollo Client', 'NestJS', 'GraphQL', 'PostgreSQL'],
