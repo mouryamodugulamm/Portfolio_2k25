@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Github, Linkedin, Mail, MessageCircle, Moon, PenLine, Phone, Sun } from 'lucide-react'
 import './App.css'
-import { achievements, contactLinks, education, experiences, profile, projects, skills } from './data/portfolio'
+import { achievements, contactLinks,  experiences, profile, projects, skills } from './data/portfolio'
 
 type Theme = 'light' | 'dark'
 
@@ -86,9 +86,9 @@ function App() {
           </h1>
           <p className="hero__summary">{profile.summary}</p>
           <div className="hero__cta">
-            <a className="button button--primary" href="/MouryaVamsiModugulaResume.pdf" target="_blank" rel="noreferrer">
+            {/* <a className="button button--primary" href="/MouryaVamsiModugulaResume.pdf" target="_blank" rel="noreferrer">
               Download resume
-            </a>
+            </a> */}
             <a className="button button--ghost" href={`mailto:${profile.email}`}>
               Let&apos;s collaborate
             </a>
@@ -224,7 +224,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section">
+        {/* <section className="section">
           <div className="section__heading">
             <h2>Education</h2>
             <p>Strong academic foundation supporting team leadership and rapid delivery.</p>
@@ -246,7 +246,7 @@ function App() {
             </a>
             .
           </p>
-        </section>
+        </section> */}
 
         <section className="section section--accent">
           <div className="section__heading">
